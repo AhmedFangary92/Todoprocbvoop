@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block title %}
+Edit
+{% endblock %}
+{% block content %}
+<style>
+    .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            }
+</style>
+<div class="row">
+    <div class="col-md-6" style="margin: 0 auto;">
+        <form action="/update/{{id}}">
+            <div class="form-group">
+                <label  for="title">Todo Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{title}}">
+            </div>
+            <div class="form-group">
+                <label for = "description">Todo Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3">{{description}}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="priority">Todo Priority</label>
+                <input type="number" class="form-control" id="priority" name="priority" value="{{priority}}" >
+            </div>
+            <button type="submit" class="button" style="margin: 0 auto;display: block;">Update</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
